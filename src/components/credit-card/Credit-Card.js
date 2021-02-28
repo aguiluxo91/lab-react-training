@@ -16,6 +16,8 @@ function CreditCard({
     case 'Master Card':
       cardType = '/img/master-card.svg';
       break;
+    default:
+      cardType = '/img/visa.png';
   }
 
   const spacedNumber = number.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ' ');
