@@ -6,10 +6,16 @@ import Random from './components/random/Random';
 import CreditCard from './components/credit-card/Credit-Card';
 import Rating from './components/rating/Rating';
 import DriverCard from './components/driver-card/driverCard';
+import LikeButton from './components/like-button/LikeButton';
+import ClickablePicture from './components/clickable-picture/ClickablePicture';
+import Dice from './components/dice/Dice';
+import Carousel from './components/carousel/Carousel';
+import NumbersTable from './components/numbers-table/NumbersTable';
+import Facebook from './components/facebook/Facebook';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <IdCard
         lastName="Doe"
         firstName="John"
@@ -53,7 +59,7 @@ function App() {
         </BoxColor>
       </div>
 
-      <div className="d-flex container">
+      <div className="d-flex">
         <CreditCard
           type="Visa"
           number="0123456789018845"
@@ -86,7 +92,7 @@ function App() {
         />
       </div>
 
-      <div className="container mt-3">
+      <div className="mt-3">
         <Rating>0</Rating>
         <Rating>1.49</Rating>
         <Rating>1.5</Rating>
@@ -95,25 +101,54 @@ function App() {
         <Rating>5</Rating>
       </div>
 
-      <div className="container">
-        <DriverCard
-          name="Travis Kalanick"
-          rating={4.2}
-          img="https://si.wsj.net/public/resources/images/BN-TY647_37gql_OR_20170621052140.jpg?width=620&height=428"
-          car={{
-            model: 'Toyota Corolla Altis',
-            licensePlate: 'CO42DE',
-          }}
+      <DriverCard
+        name="Travis Kalanick"
+        rating={4.2}
+        img="https://si.wsj.net/public/resources/images/BN-TY647_37gql_OR_20170621052140.jpg?width=620&height=428"
+        car={{
+          model: 'Toyota Corolla Altis',
+          licensePlate: 'CO42DE',
+        }}
+      />
+      <DriverCard
+        name="Dara Khosrowshahi"
+        rating={4.9}
+        img="https://ubernewsroomapi.10upcdn.com/wp-content/uploads/2017/09/Dara_ELT_Newsroom_1000px.jpg"
+        car={{
+          model: 'Audi A3',
+          licensePlate: 'BE33ER',
+        }}
+      />
+
+      <div className="d-flex">
+        <LikeButton />
+        <LikeButton />
+      </div>
+
+      <ClickablePicture
+        className="mb-5"
+        img="/img/persons/maxence.png"
+        imgClicked="/img/persons/maxence-glasses.png"
+      />
+      <div className="my-3">
+        <Dice />
+      </div>
+      <div className="my-3">
+        <Carousel
+          imgs={[
+            'https://randomuser.me/api/portraits/women/1.jpg',
+            'https://randomuser.me/api/portraits/men/1.jpg',
+            'https://randomuser.me/api/portraits/women/2.jpg',
+            'https://randomuser.me/api/portraits/men/2.jpg',
+          ]}
         />
-        <DriverCard
-          name="Dara Khosrowshahi"
-          rating={4.9}
-          img="https://ubernewsroomapi.10upcdn.com/wp-content/uploads/2017/09/Dara_ELT_Newsroom_1000px.jpg"
-          car={{
-            model: 'Audi A3',
-            licensePlate: 'BE33ER',
-          }}
-        />
+      </div>
+      <div className="my-3">
+        <NumbersTable limit={16} />
+      </div>
+
+      <div className="my-3">
+        <Facebook />
       </div>
     </div>
   );
